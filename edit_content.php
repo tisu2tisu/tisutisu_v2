@@ -1,5 +1,10 @@
 <?php
 	include_once "myconfig.php";
+	if(!$user->isLoggedIn())
+	{
+		header("location: index.php");
+		return false;
+	}
 ?>	
 <!DOCTYPE html>
 	<html lang="en">
