@@ -435,7 +435,7 @@
 						<td><?php echo $row['id']; ?> </td>
 						<td><a href="index.php?article=<?php echo $row['url']; ?>"><?php 
 						$string = explode(" ",$row['judul']);
-						$string = implode(" ",array_splice($string,0,8));
+						$string = implode(" ",array_splice($string,0,7));
 						echo $string . " ..."; ?></a></td>
 						<td><?php echo $row['created']; ?></td>
 						<td><?php echo $row['modified']; ?></td>
