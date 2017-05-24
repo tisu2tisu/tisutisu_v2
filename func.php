@@ -624,7 +624,7 @@
 			public function show_edit_profile($username)
 			{
 					
-				$stmt = $this->db->prepare("tSELECT * FROM user WHERE username=:username");
+				$stmt = $this->db->prepare("SELECT * FROM user WHERE username=:username");
 				$stmt->execute(array(":username" => $username));
 				
 				if($row = $stmt->rowCount() > 0)
