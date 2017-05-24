@@ -142,11 +142,11 @@
 		</div>
 		<div class="clear-float"></div>
 		<div class="footer">
-		<a href="your link here"> <i class="fa fa-facebook fa-2x"></i></a>
+		<a href="https://www.facebook.com/suracatur" target="_blank"> <i class="fa fa-facebook fa-2x"></i></a>
 		CaturSurya
-		<a href="your link here"> <i class="fa fa-envelope fa-2x"></i></a>
+		<a><i class="fa fa-envelope fa-2x"></i></a>
 		catursura@gmail.com
-		<a href="your link here"> <i class="fa fa-mobile fa-3x"></i></a>
+		<a><i class="fa fa-mobile fa-3x"></i></a>
 		+6287875629238
 
 			<p>@CaturSura. All rights reserved | FLAT Design  | Demo Portofolio </p>
