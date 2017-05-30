@@ -17,9 +17,8 @@
 	include_once "myconfig.php";
 	if(!$user->isLoggedIn())
 	{
-		echo "<script>alert('login terlebih dahulu!');</script>";
-		header("tisutisu.tk");
-		return false
+		header("location: index.php");
+		return false;
 	}
 
 ?>
