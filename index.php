@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 	<html lang="en">
+<!-- kamis kerumah ciming malem belajar bersama -->
 	<head>
 		<meta charset="utf-8">
 		<title> Tisu Tisu v2 </title>

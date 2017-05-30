@@ -302,6 +302,7 @@
 							//make sure it ends in a word so assasinate doesn't become ass ...
 							//$string = substr($stringcut, 0, strpos($stringcut, ' ')) . ' ...';
 						}
+					
 			?>
 					<a href="index.php?article=<?php echo $row['url']; ?>" class="judul"><div class="content">
 					<p>
@@ -311,7 +312,17 @@
 					</div>
 					</p>
 					Di posting oleh: <?php echo $row['user']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					Tanggal: <?php echo $row['created']; ?>
+					Tanggal: <?php echo $row['created']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<?php 
+					$judul = $row['judul'];
+					$judul = strtolower($judul);
+					$judul = str_replace(array('ä','ü','ö','ß'),array('ae','ue','oe','ss'),$judul);
+					$judul = preg_replace('#[^\w\säüöß]#',null,$judul);
+					$judul = preg_replace('#[\s]{2,}#',' ',$judul);
+					$judul = str_replace(array(' '),array('-'),$judul);
+					
+					?>
+					Comments : <?php echo $this->count_comments($judul); ?>
 					</div>
 					</a>
 				<?php
@@ -804,6 +815,16 @@
 					echo $e->getMessage();
 					return false;
 				}
+			}
+			
+			public function count_comments($judul)
+			{
+				$stmt = $this->db->prepare("SELECT * FROM comments WHERE article=:judul");
+				$stmt->bindParam(":judul", $judul);
+				$stmt->execute();
+				$result = $stmt->rowCount();
+				return $result;
+				
 			}
 	}
 		
