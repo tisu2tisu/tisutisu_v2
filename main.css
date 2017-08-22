@@ -57,6 +57,30 @@ body, html {
 	background-repeat: no-repeat;
 }
 
+.header-inside {
+	float: right;
+	color: white;
+	text-align: right;
+	height: 50px;
+	bottom: 0px;
+	right: 15px;
+	top: 60vh;
+}
+
+.header-inside input {
+	padding: 8px 15px;
+	border: 0px;
+}
+
+
+.header-inside button {
+	position: relative;
+	padding: 6px 15px;
+	left: -8px;
+	background-color: #00c8f8;
+	border: 2px solid #00c8f8;
+}
+
 .header ul {
 	list-style-type: none;
 	margin: 0;
@@ -151,6 +175,9 @@ body, html {
 .aside-container {
 	float: right;
 	margin: 0;
+	z-index: 2;
+	display: block;
+	top: 5%;
 	padding: 0.5% 1% 0.5% 1%;
 	width: 20%;
 	border: 1px solid;
@@ -277,6 +304,7 @@ body, html {
 
 .aside a {
 	font-size: 19px;
+	z-index: 1;
 	font-weight: bold;
 	color: black;
 }
@@ -432,14 +460,36 @@ body, html {
 	padding: 2%;
 	margin-bottom: 4%;
 }
+#search-result {
+	float: right;
+	position: relative;
+	text-align: left;
+	background: #353535;
+	padding: 5px;
+	bottom: 0px;
+	display: block;
+	line-height: 16px;
+	opacity: 0.9;
+	right: 20px;
+	max-height: 100px;
+	max-width: 400px;
+	z-index: 99;
+	overflow-y: auto; 
+	overflow-x: hidden;
+	font: normal 12px "Tahoma" , Arial, Helvetica, sans-serif;
+}
 
+#search-result a {
+	text-decoration: none;
+	color: #eee;
+	display: inline-block;
+	z-index: 99;
+}
 
-
-
-
-
-
-
+#search-result a:hover {
+	background-color: #5d666f;
+	z-index: 99;
+}
 
 
 	

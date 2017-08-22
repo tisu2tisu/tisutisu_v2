@@ -4,10 +4,29 @@
 	<head>
 		<meta charset="utf-8">
 		<title> Tisu Tisu v2 </title>
-		<link href="main.css?version=15" type="text/css" rel="stylesheet">
+		<link href="main.css?version=17" type="text/css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
 		<script src="https://use.fontawesome.com/7fc6d91130.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function (e) {
+				$("#search").keyup(function (){
+					$("#search-result").show();
+					var x = $(this).val();
+					$.ajax (
+						{
+						type: 'GET',
+						url: 'fetch.php',
+						data: 'q='+x,
+						success:function(data)
+						{
+							$("#search-result").html(data);
+						},
+					});
+				});
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -18,6 +37,15 @@
 				<li><a href="programming.php">PROGRAMMING </a></li>
 				<li><a href="aboutus.php">ABOUT US </a></li>
 			</ul>
+			<div class="header-inside">
+			<form>
+				<input type="text" id="search" placeholder="Cari Artikel disini..." />
+				<button type="submit" id="search-submit">Search!</button>
+				<br>
+				<div id="search-result"></div>
+
+			</form>
+			</div>
 		</div>
 		
 		<div class="content-background">

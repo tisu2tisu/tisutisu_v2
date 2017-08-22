@@ -823,9 +823,12 @@
 				$stmt->bindParam(":judul", $judul);
 				$stmt->execute();
 				$result = $stmt->rowCount();
-				return $result;
-				
+				return $result;	
 			}
+			
+				
+			
+			
 	}
 		
 	
